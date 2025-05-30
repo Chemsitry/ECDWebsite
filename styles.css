@@ -180,9 +180,17 @@ text-overflow: ellipsis;
 .about-image{
   margin:0px;
   width:90%;
+}
+
   .about-image img{
     width:100%;
   }
+}
+
+.about-text{
+  margin: var(--contentmargin);
+  padding-left: var(--contentpadding);
+  padding-right: var(--contentpadding);
 }
 
 @media (min-width:340px){
@@ -196,8 +204,23 @@ text-overflow: ellipsis;
   }
 }
 
-
 @media (min-width:720px){
+  .about-image{
+    margin: var(--contentmargin);
+    height:401px;
+    width:calc(25vw + 60px);
+  }
+  .about-image img{
+    width:calc(25vw + 60px);
+  }
+  .about-text{
+    margin: var(--contentmargin);
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width:1024px){
   .about-image{
     margin: var(--contentmargin);
     height:401px;
@@ -206,13 +229,14 @@ text-overflow: ellipsis;
   .about-image img{
     width:321px;
   }
+  .about-text{
+    margin: var(--contentmargin);
+    padding-left: var(--contentpadding);
+    padding-right: var(--contentpadding);
+  }
 }
 
-.about-text{
-  margin: var(--contentmargin);
-  padding-left: var(--contentpadding);
-  padding-right: var(--contentpadding);
-}
+
 
 .forrest-image{
   height:100%;
@@ -256,9 +280,9 @@ text-overflow: ellipsis;
     padding-right: 50px;
   }
 }
-@media (min-width:1920px) {
+@media (min-width:1820px) {
   .about-desc{
-    width:calc(1800px);
+    width:calc(1700px);
   }
 }
 
@@ -283,4 +307,65 @@ a {
 
 .return-home:hover{
   background-color: #009B00;
+}
+
+.h2div{
+  margin: var(--contentmargin);
+  padding-left: var(--contentpadding);
+  padding-right: var(--contentpadding);
+}
+
+.physical-split{
+  padding: var(--contentpadding);
+  margin-left: var(--contentpadding);
+  margin-right: var(--contentpadding);
+  display:flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width:100%;
+}
+.paper{
+  width:100%;
+
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@media (min-width:1024px) {
+  .physical-split{
+    flex-direction: row;
+    align-items: center;
+  }
+  .paper{
+    flex:1;
+  }
+}
+
+@media (min-width:1500px) {
+  .physical-split{
+    width: 1500px;
+  }
+}
+
+.papercaption{
+  padding-left: var(--contentpadding);
+}
+
+.paperiframe{
+    margin-right:var(--contentmargin);
+    width:100%;
+}
+
+.paperiframe iframe{
+  width:100%;
+  height:600px;
+  overflow-y: scroll;
+  border: 0px;
+}
+
+.socioemotional{
+  height:100vh;
 }
