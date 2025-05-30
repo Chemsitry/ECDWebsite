@@ -2,22 +2,22 @@
   --ecdgreen: #02AB04;
 }
 :root {
-  --contentwidth: 150px;
+  --contentwidth: calc(45vw + 60px);
   --contentmargin: 6px;
   --contentpadding: 6px;
 }
 
 @media (min-width:720px) {
   :root {
-    --contentwidth: 180px;
-    --contentmargin: 10px;
-    --contentpadding: 10px;
+    --contentwidth: 320px;
+    --contentmargin: 15px;
+    --contentpadding: 15px;
   }
 }
 
 body{
   overflow-y: scroll;
-  background-color:#000000;
+  background-color:#050505;
   padding:0;
   margin:0;
   color:#FFFFFF;
@@ -41,9 +41,12 @@ body{
 .title > div > h1 {
   font-size: 40px;
   margin: 0px;
+  padding-top: 30px;
 }
 
 .pagetitle {
+  flex-direction: column;
+  padding-top: 20px;
 }
 
 @media (min-width:720px) {
@@ -59,42 +62,110 @@ body{
   .title > div > h1 {
     padding: 24px;
     padding-left: 48px;
+    padding-top: 28px;
     font-size: 54px;
     margin: 0px;
   }
   .pagetitle {
     padding-top: 40px;
     padding-bottom: 40px;
+    flex-direction: row;
   }
+}
+
+.div-home > .home-text {
+  margin: 0px;
 }
 
 .content {
   width:inherit;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0px;
   row-gap: 0px;
   column-gap: 0px;
   padding:var(--contentmargin);
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.content > .contentbox {
+@media (min-width:720px) {
+  .content{
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+
+.contentbox {
   width: var(--contentwidth);
-  height: var(--contentwidth) ;
-  background: #101010;
+  height: var(--contentwidth);
   margin: var(--contentmargin);
-  padding: var(--contentpadding);
+  padding: 0px;
+}
+
+.content > .contentbox > .contentlink{
+  width:100%;
+  height:var(--contentwidth);
+  background: #202020;
+  display:flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 15px;
+  transition-duration: 125ms;
+}
+
+.contentlink:hover{
+  transform: scale(1.1);
+}
+
+.contentphoto{
+  height: calc(var(--contentwidth) - 36px);
+}
+
+.contentphoto img{
+}
+
+.content > .contentbox > .contentlink > .contenttext{
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+
+.content > .contentbox > .contentlink > .contenttext > p{
+  margin: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media (min-width:720px) {
+  .content > .contentbox > .contentlink > .contenttext{
+    -webkit-line-clamp: 2;
+  }
+  .contentphoto{
+    height: calc(var(--contentwidth) - 77px);
+  }
+  .content > .contentbox > .contentlink > .contenttext > p{
+    margin: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
 }
 
 .content > .contentTitle {
-  width: calc(2 * var(--contentwidth) + 2*var(--contentmargin) + 2*var(--contentpadding));
+  /*width: calc(2 * var(--contentwidth) + 2*var(--contentmargin) + 0*var(--contentpadding));*/
+  width: var(--contentwidth);
   height: var(--contentwidth);
-  background: #101010;
+  background: var(--ecdgreen);
   margin: var(--contentmargin);
-  padding: var(--contentpadding);
+  padding: 0px;
 }
 
 .about-split{
@@ -105,14 +176,42 @@ body{
   align-items: center;
 }
 
+
 .about-image{
-  margin: var(--contentmargin);
-  height:401px;
-  width:321px;
+  margin:0px;
+  width:90%;
+  .about-image img{
+    width:100%;
+  }
+}
+
+@media (min-width:340px){
+  .about-image{
+    margin:0px;
+    height:401px;
+    width:321px;
+  }
+  .about-image img{
+    width:321px;
+  }
+}
+
+
+@media (min-width:720px){
+  .about-image{
+    margin: var(--contentmargin);
+    height:401px;
+    width:321px;
+  }
+  .about-image img{
+    width:321px;
+  }
 }
 
 .about-text{
   margin: var(--contentmargin);
+  padding-left: var(--contentpadding);
+  padding-right: var(--contentpadding);
 }
 
 .forrest-image{
@@ -143,12 +242,26 @@ body{
 
 .about-desc{
   display:flex;
+  width:inherit;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: left;
-  padding-left: 20px;
+  padding-left: 25px;
   padding-right: 30px;
 }
+
+@media (min-width:720px) {
+  .about-desc{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width:1920px) {
+  .about-desc{
+    width:calc(1800px);
+  }
+}
+
 
 .q{
   font-style: italic;
