@@ -401,20 +401,26 @@ a {
 
 .epigraph{
   padding: var(--contentpadding);
-  margin-left: var(--contentmargin);
-  margin-right: var(--contentmargin);
+  margin:0px;
+  width:100%;
 }
 .epigraph p{
   font-size:24px;
 }
 
 @media (min-width:720px){
+  .epigraph{
+    width:60%;
+  }
   .epigraph p{
     font-size:30px;
   }
 }
 
 @media (max-height:720px){
+  .epigraph{
+    width:100%;
+  }
   .epigraph p{
     font-size:24px;
   }
