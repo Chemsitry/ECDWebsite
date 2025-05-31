@@ -2,14 +2,16 @@
   --ecdgreen: #02AB04;
 }
 :root {
-  --contentwidth: calc(45vw + 60px);
+  --contentwidth: calc(45vw + 70px);
+  --contentheight: calc(45vw + 120px);
   --contentmargin: 6px;
   --contentpadding: 6px;
 }
 
 @media (min-width:720px) {
   :root {
-    --contentwidth: 320px;
+    --contentwidth: 330px;
+    --contentheight: 400px;
     --contentmargin: 15px;
     --contentpadding: 15px;
   }
@@ -73,6 +75,32 @@ body{
   }
 }
 
+@media (max-height:720px) {
+  body{
+    font-size: 20px;
+  }
+
+  .title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .title > div > h1 {
+    padding: 20px;
+    padding-left: 48px;
+    padding-top: 28px;
+    font-size: 40px;
+    margin: 0px;
+  }
+  .pagetitle {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    flex-direction: column;
+  }
+}
+
+
+
 .div-home > .home-text {
   margin: 0px;
 }
@@ -102,14 +130,14 @@ body{
 
 .contentbox {
   width: var(--contentwidth);
-  height: var(--contentwidth);
+  height: var(--contentheight);
   margin: var(--contentmargin);
   padding: 0px;
 }
 
 .content > .contentbox > .contentlink{
   width:100%;
-  height:var(--contentwidth);
+  height:var(--contentheight);
   background: #202020;
   display:flex;
   flex-direction: column;
@@ -123,7 +151,7 @@ body{
 }
 
 .contentphoto{
-  height: calc(var(--contentwidth) - 36px);
+  height: calc(var(--contentheight) - 36px);
 }
 
 .contentphoto img{
@@ -149,7 +177,7 @@ text-overflow: ellipsis;
     -webkit-line-clamp: 2;
   }
   .contentphoto{
-    height: calc(var(--contentwidth) - 77px);
+    height: calc(var(--contentheight) - 77px);
   }
   .content > .contentbox > .contentlink > .contenttext > p{
     margin: 6px;
@@ -162,7 +190,7 @@ text-overflow: ellipsis;
 .content > .contentTitle {
   /*width: calc(2 * var(--contentwidth) + 2*var(--contentmargin) + 0*var(--contentpadding));*/
   width: var(--contentwidth);
-  height: var(--contentwidth);
+  height: var(--contentheight);
   background: var(--ecdgreen);
   margin: var(--contentmargin);
   padding: 0px;
@@ -180,10 +208,12 @@ text-overflow: ellipsis;
 .about-image{
   margin:0px;
   width:90%;
+  height: calc(40vw + 265px);
 }
 
   .about-image img{
     width:100%;
+    height: calc(40vw + 265px);
   }
 }
 
@@ -323,7 +353,6 @@ a {
   flex-direction:column;
   flex-wrap: nowrap;
   align-items: center;
-  width:100%;
 }
 .paper{
   width:100%;
@@ -346,7 +375,7 @@ a {
 
 @media (min-width:1500px) {
   .physical-split{
-    width: 1500px;
+    width: 1425px;
   }
 }
 
@@ -368,4 +397,25 @@ a {
 
 .socioemotional{
   height:100vh;
+}
+
+.epigraph{
+  padding: var(--contentpadding);
+  margin-left: var(--contentmargin);
+  margin-right: var(--contentmargin);
+}
+.epigraph p{
+  font-size:24px;
+}
+
+@media (min-width:720px){
+  .epigraph p{
+    font-size:30px;
+  }
+}
+
+@media (max-height:720px){
+  .epigraph p{
+    font-size:24px;
+  }
 }
